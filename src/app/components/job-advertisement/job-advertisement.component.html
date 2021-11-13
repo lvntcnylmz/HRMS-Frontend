@@ -1,0 +1,21 @@
+<div
+  *ngFor="let jobAdvertisement of jobAdvertisements"
+  class="card"
+  style="width: 18rem"
+>
+  <div class="card-body">
+    <h5 class="card-title">{{ jobAdvertisement.jobTitle }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">
+      Company : {{ jobAdvertisement.companyName }}
+    </h6>
+    <p class="card-text">We are searching developers.</p>
+    <div class="row">
+      <div class="col-md-6">
+        <button type="button" class="btn btn-primary">Details</button>
+      </div>
+      <div class="col-md-6">
+        <button type="button" class="btn btn-success">Apply Now</button>
+      </div>
+    </div>
+  </div>
+</div>
