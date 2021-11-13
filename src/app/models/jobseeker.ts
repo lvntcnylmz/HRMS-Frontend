@@ -1,10 +1,8 @@
 import { User } from './user';
 
-export interface JobSeeker {
-  userId: User;
+export interface JobSeeker extends User {
   firstName: string;
   lastName: string;
   nationalId: string;
   dateOfBirth: string;
-  //TODO: add resume ref...
 }
