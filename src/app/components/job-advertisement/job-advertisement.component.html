@@ -1,20 +1,24 @@
-<div
-  *ngFor="let jobAdvertisement of jobAdvertisements"
-  class="card"
-  style="width: 18rem"
->
-  <div class="card-body">
-    <h5 class="card-title">{{ jobAdvertisement.jobTitle }}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">
-      Company : {{ jobAdvertisement.companyName }}
-    </h6>
-    <p class="card-text">We are searching developers.</p>
-    <div class="row">
-      <div class="col-md-6">
-        <button type="button" class="btn btn-primary">Details</button>
-      </div>
-      <div class="col-md-6">
-        <button type="button" class="btn btn-success">Apply Now</button>
+<div class="row">
+  <div
+    *ngFor="let jobAdvertisement of jobAdvertisements"
+    class="card bg-dark text-white m-auto"
+    style="width: 19rem"
+  >
+    <div class="card-body">
+      <h5 class="card-title">{{ jobAdvertisement.jobTitle }}</h5>
+      <h6 class="card-subtitle text-muted">
+        Company : {{ jobAdvertisement.companyName }}
+      </h6>
+      <p class="card-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel ex.
+      </p>
+      <div class="row">
+        <div class="col-auto m-auto">
+          <button type="button" class="btn btn-primary">Details</button>
+        </div>
+        <div class="col-auto m-auto">
+          <button type="button" class="btn btn-success">Apply</button>
+        </div>
       </div>
     </div>
   </div>
