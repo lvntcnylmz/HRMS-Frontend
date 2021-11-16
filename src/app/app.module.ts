@@ -9,9 +9,12 @@ import { JobAdvertisementComponent } from './components/job-advertisement/job-ad
 import { JobAdvertisementDetailComponent } from './components/job-advertisement-detail/job-advertisement-detail.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CategoryComponent } from './components/category/category.component';
+import { JobPositionComponent } from './components/job-position/job-position.component';
+import { CityComponent } from './components/city/city.component';
+import { EmployerComponent } from './components/employer/employer.component';
 
 @NgModule({
-  declarations: [AppComponent, NaviComponent, JobAdvertisementComponent, JobAdvertisementDetailComponent, FooterComponent, CategoryComponent],
+  declarations: [AppComponent, NaviComponent, JobAdvertisementComponent, JobAdvertisementDetailComponent, FooterComponent, CategoryComponent, JobPositionComponent, CityComponent, EmployerComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
