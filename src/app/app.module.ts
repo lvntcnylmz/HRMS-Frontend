@@ -12,9 +12,12 @@ import { CategoryComponent } from './components/category/category.component';
 import { JobPositionComponent } from './components/job-position/job-position.component';
 import { CityComponent } from './components/city/city.component';
 import { EmployerComponent } from './components/employer/employer.component';
+import { JobPositionListComponent } from './components/job-position/job-position-list/job-position-list.component';
+import { EmployerListComponent } from './components/employer/employer-list/employer-list.component';
+import { CityListComponent } from './components/city/city-list/city-list.component';
 
 @NgModule({
-  declarations: [AppComponent, NaviComponent, JobAdvertisementComponent, JobAdvertisementDetailComponent, FooterComponent, CategoryComponent, JobPositionComponent, CityComponent, EmployerComponent],
+  declarations: [AppComponent, NaviComponent, JobAdvertisementComponent, JobAdvertisementDetailComponent, FooterComponent, CategoryComponent, JobPositionComponent, CityComponent, EmployerComponent, JobPositionListComponent, EmployerListComponent, CityListComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
