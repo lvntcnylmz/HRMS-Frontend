@@ -1,6 +1,8 @@
 <div class="container">
   <app-navi></app-navi>
-  <div class="row mt-5">
+  <app-home *ngIf="!hasRoute('jobs') && !hasRoute('about')"></app-home>
+  <app-about-us *ngIf="hasRoute('/about')"></app-about-us>
+  <div class="row mt-5" *ngIf="hasRoute('/jobs')">
     <div class="col-3">
       <app-category></app-category>
     </div>
