@@ -1,14 +1,14 @@
-import { ActivatedRoute } from '@angular/router';
+import { JobPositionService } from './../../../services/job-position.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { JobPosition } from 'src/app/models/jobPosition';
-import { JobPositionService } from 'src/app/services/job-position.service';
 
 @Component({
-  selector: 'app-job-position',
-  templateUrl: './job-position.component.html',
-  styleUrls: ['./job-position.component.css'],
+  selector: 'app-job-position-list',
+  templateUrl: './job-position-list.component.html',
+  styleUrls: ['./job-position-list.component.css'],
 })
-export class JobPositionComponent implements OnInit {
+export class JobPositionListComponent implements OnInit {
   jobPositions: JobPosition[] = [];
   dataLoaded = false;
   filterText = '';

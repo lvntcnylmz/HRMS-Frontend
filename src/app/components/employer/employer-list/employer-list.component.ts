@@ -1,14 +1,14 @@
-import { Employer } from './../../models/employer';
 import { Component, OnInit } from '@angular/core';
-import { EmployerService } from 'src/app/services/employer.service';
 import { ActivatedRoute } from '@angular/router';
+import { Employer } from 'src/app/models/employer';
+import { EmployerService } from 'src/app/services/employer.service';
 
 @Component({
-  selector: 'app-employer',
-  templateUrl: './employer.component.html',
-  styleUrls: ['./employer.component.css'],
+  selector: 'app-employer-list',
+  templateUrl: './employer-list.component.html',
+  styleUrls: ['./employer-list.component.css'],
 })
-export class EmployerComponent implements OnInit {
+export class EmployerListComponent implements OnInit {
   employers: Employer[] = [];
   dataLoaded = false;
   currentEmployer: Employer;

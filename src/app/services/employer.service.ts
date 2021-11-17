@@ -12,7 +12,7 @@ export class EmployerService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getCities(): Observable<ListResponseModel<Employer>> {
+  getEmployers(): Observable<ListResponseModel<Employer>> {
     let newPath = this.apiURL + 'employers/getAll';
     return this.httpClient.get<ListResponseModel<Employer>>(newPath);
   }
