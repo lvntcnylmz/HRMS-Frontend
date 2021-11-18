@@ -8,6 +8,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
   { path: 'jobs', component: JobAdvertisementComponent },
+  { path: 'jobs/:jobId', component: JobAdvertisementComponent },
   { path: 'companies', component: EmployerComponent },
   { path: 'about', component: AboutUsComponent },
 ];

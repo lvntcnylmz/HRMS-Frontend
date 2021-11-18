@@ -19,7 +19,22 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, NaviComponent, JobAdvertisementComponent, JobAdvertisementDetailComponent, FooterComponent, CategoryComponent, JobPositionComponent, CityComponent, EmployerComponent, JobPositionListComponent, EmployerListComponent, CityListComponent, AboutUsComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    NaviComponent,
+    JobAdvertisementComponent,
+    JobAdvertisementDetailComponent,
+    FooterComponent,
+    CategoryComponent,
+    JobPositionComponent,
+    CityComponent,
+    EmployerComponent,
+    JobPositionListComponent,
+    EmployerListComponent,
+    CityListComponent,
+    AboutUsComponent,
+    HomeComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
