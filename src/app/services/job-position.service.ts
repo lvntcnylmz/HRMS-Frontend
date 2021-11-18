@@ -17,4 +17,9 @@ export class JobPositionService {
     let newPath = this.apiURL + 'jobPositions/getAll';
     return this.httpClient.get<ListResponseModel<JobPosition>>(newPath);
   }
+
+  getJobById(jobId: number): Observable<ListResponseModel<JobPosition>> {
+    let newPath = this.apiURL + 'jobPositions/getById?jobId=' + jobId;
+    return this.httpClient.get<ListResponseModel<JobPosition>>(newPath);
+  }
 }

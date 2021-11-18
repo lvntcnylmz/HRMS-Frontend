@@ -20,11 +20,25 @@ export class JobPositionListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe((params) => {
+      if (params['id']) {
+        this.getJobById(params['id']);
+      } else {
+        this.getJobPositions();
+      }
+    });
     this.getJobPositions();
   }
 
   getJobPositions() {
     this.jobPositionService.getJobPositions().subscribe((response) => {
+      this.jobPositions = response.data;
+      this.dataLoaded = true;
+    });
+  }
+
+  getJobById(jobId: number) {
+    this.jobPositionService.getJobById(jobId).subscribe((response) => {
       this.jobPositions = response.data;
       this.dataLoaded = true;
     });
@@ -36,6 +50,14 @@ export class JobPositionListComponent implements OnInit {
 
   getCurrentJob(currentJob: JobPosition) {
     if (currentJob == this.currentJob) {
+      return 'list-group-item list-group-item-action list-group-item-active list-group-item-dark';
+    } else {
+      return 'list-group-item list-group-item-action lislist-group-item-dark';
+    }
+  }
+
+  getAllCategoryClass() {
+    if (!this.currentJob) {
       return 'list-group-item list-group-item-action list-group-item-active list-group-item-dark';
     } else {
       return 'list-group-item list-group-item-action lislist-group-item-dark';

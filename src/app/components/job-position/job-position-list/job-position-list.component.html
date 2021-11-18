@@ -19,10 +19,11 @@
       data-bs-parent="#accordionExample"
     >
       <div class="list-group">
+        <a [class]="getAllCategoryClass()" routerLink="/jobs">All Positions</a>
         <a
-          href="#"
           [class]="getCurrentJob(jobPosition)"
           (click)="setCurrentJob(jobPosition)"
+          routerLink="/jobs/{{ jobPosition.id }}"
           *ngFor="let jobPosition of jobPositions"
           >{{ jobPosition.title }}</a
         >

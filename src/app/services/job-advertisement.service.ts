@@ -8,14 +8,17 @@ import { JobAdvertisement } from '../models/jobAdvertisement';
   providedIn: 'root',
 })
 export class JobAdvertisementService {
-  
-  apiURL = "http://localhost:8080/api/";
+  apiURL = 'http://localhost:8080/api/';
 
   constructor(private httpClient: HttpClient) {}
 
-  getProducts(): Observable<ListResponseModel<JobAdvertisement>> {
-    let newPath = this.apiURL + "jobAdvertisements/getAll";
+  getJobAdvertisements(): Observable<ListResponseModel<JobAdvertisement>> {
+    let newPath = this.apiURL + 'jobAdvertisements/getAll';
     return this.httpClient.get<ListResponseModel<JobAdvertisement>>(newPath);
   }
-  
+
+  getJObAdvertisementByJobPositionId(jobId: number) {
+    let newPath = this.apiURL + 'jobAdvertisements/getByJobId?jobId=' + jobId;
+    return this.httpClient.get<ListResponseModel<JobAdvertisement>>(newPath);
+  }
 }

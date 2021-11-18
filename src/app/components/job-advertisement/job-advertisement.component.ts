@@ -1,3 +1,4 @@
+import { JobPositionService } from 'src/app/services/job-position.service';
 import { JobAdvertisementService } from './../../services/job-advertisement.service';
 import { JobAdvertisement } from './../../models/jobAdvertisement';
 import { Component, OnInit } from '@angular/core';
@@ -15,15 +16,34 @@ export class JobAdvertisementComponent implements OnInit {
 
   constructor(
     private JobAdvertisementService: JobAdvertisementService,
-    private activedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private jobPositionService: JobPositionService
   ) {}
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe((params) => {
+      if (params['jobId']) {
+        this.getJobAdvertisementByJobId(params['jobId']);
+      } else {
+        this.getJobAdvertisements();
+      }
+    });
     this.getJobAdvertisements();
   }
 
   getJobAdvertisements() {
-    this.JobAdvertisementService.getProducts().subscribe((response) => {
+    this.JobAdvertisementService.getJobAdvertisements().subscribe(
+      (response) => {
+        this.jobAdvertisements = response.data;
+        this.dataLoaded = true;
+      }
+    );
+  }
+
+  getJobAdvertisementByJobId(jobId: number) {
+    this.JobAdvertisementService.getJObAdvertisementByJobPositionId(
+      jobId
+    ).subscribe((response) => {
       this.jobAdvertisements = response.data;
       this.dataLoaded = true;
     });

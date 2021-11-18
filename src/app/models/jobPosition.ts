@@ -1,5 +1,4 @@
-import { JobAdvertisement } from './jobAdvertisement';
 export interface JobPosition {
-  jobId: number;
+  id: number;
   title: string;
 }
