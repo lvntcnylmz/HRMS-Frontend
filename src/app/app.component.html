@@ -1,7 +1,16 @@
+<app-navi></app-navi>
 <div class="container">
-  <app-navi></app-navi>
-  <app-home *ngIf="!hasRoute('jobs') && !hasRoute('about')"></app-home>
+  <app-home
+    *ngIf="
+      !hasRoute('jobs') &&
+      !hasRoute('about') &&
+      !hasRoute('login') &&
+      !hasRoute('register')
+    "
+  ></app-home>
   <app-about-us *ngIf="hasRoute('/about')"></app-about-us>
+  <app-login *ngIf="hasRoute('login')"></app-login>
+  <app-register *ngIf="hasRoute('register')"></app-register>
   <div class="row mt-5" *ngIf="hasRoute('/jobs')">
     <div class="col-3">
       <app-category></app-category>
