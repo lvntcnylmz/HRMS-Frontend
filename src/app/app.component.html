@@ -1,23 +1,9 @@
-<app-navi></app-navi>
-<div class="container">
-  <app-home
-    *ngIf="
-      !hasRoute('jobs') &&
-      !hasRoute('about') &&
-      !hasRoute('login') &&
-      !hasRoute('register')
-    "
-  ></app-home>
-  <app-about-us *ngIf="hasRoute('/about')"></app-about-us>
-  <app-login *ngIf="hasRoute('login')"></app-login>
-  <app-register *ngIf="hasRoute('register')"></app-register>
-  <div class="row mt-5" *ngIf="hasRoute('/jobs')">
-    <div class="col-3">
-      <app-category></app-category>
-    </div>
-    <div class="col-9">
-      <router-outlet></router-outlet>
-    </div>
+<div>
+  <app-navi></app-navi>
+  <div class="container">
+    <router-outlet></router-outlet>
   </div>
-  <app-footer></app-footer>
+  <footer>
+    <app-footer></app-footer>
+  </footer>
 </div>
