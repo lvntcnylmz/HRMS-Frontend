@@ -10,11 +10,7 @@ import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
-  {
-    path: 'jobs',
-    component: JobAdvertisementComponent,
-  },
-  { path: 'jobs', component: CategoryComponent },
+  { path: 'jobs', component: JobAdvertisementComponent },
   { path: 'jobs/:jobId', component: JobAdvertisementComponent },
   { path: 'companies', component: EmployerComponent },
   { path: 'about', component: AboutUsComponent },
