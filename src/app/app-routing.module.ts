@@ -1,4 +1,3 @@
-import { CategoryComponent } from './components/category/category.component';
 import { HomeComponent } from './components/home/home.component';
 import { EmployerComponent } from './components/employer/employer.component';
 import { JobAdvertisementComponent } from './components/job-advertisement/job-advertisement.component';
@@ -11,7 +10,8 @@ import { RegisterComponent } from './components/register/register.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
   { path: 'jobs', component: JobAdvertisementComponent },
-  { path: 'jobs/:jobId', component: JobAdvertisementComponent },
+  { path: 'jobs/:id', component: JobAdvertisementComponent },
+  { path: 'cities/:id', component: JobAdvertisementComponent },
   { path: 'companies', component: EmployerComponent },
   { path: 'about', component: AboutUsComponent },
   { path: 'login', component: LoginComponent },
