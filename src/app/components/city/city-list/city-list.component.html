@@ -1,4 +1,4 @@
-<div class="accordion mb-2" id="accordionExample">
+<div class="accordion mb-2" id="cities">
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingThree">
       <button
@@ -16,13 +16,14 @@
       id="collapseThree"
       class="accordion-collapse collapse show"
       aria-labelledby="headingThree"
-      data-bs-parent="#accordionExample"
+      data-bs-parent="#cities"
     >
       <div class="list-group">
+        <a [class]="getAllCityClass()" routerLink="/jobs">All Cities</a>
         <a
-          href="#"
           [class]="getCurrentCity(city)"
           (click)="setCurrentCity(city)"
+          routerLink="/cities/{{ city.id }}"
           *ngFor="let city of cities"
           >{{ city.cityName }}</a
         >

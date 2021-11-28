@@ -6,13 +6,18 @@
     <div class="row">
       <div
         *ngFor="let jobAdvertisement of jobAdvertisements"
-        class="card bg-dark text-white mb-5 mx-2"
+        class="card rounded-6 shadow mb-5 mx-2"
         style="width: 19rem"
       >
         <div class="card-body">
-          <h5 class="card-title">{{ jobAdvertisement.jobTitle }}</h5>
-          <h6 class="card-subtitle text-muted">
+          <h5 class="card-title">
+            {{ jobAdvertisement.jobTitle }}
+          </h5>
+          <h6 class="card-subtitle text-muted mb-2">
             Company : {{ jobAdvertisement.companyName }}
+          </h6>
+          <h6 class="card-subtitle text-muted">
+            City : {{ jobAdvertisement.cityName }}
           </h6>
           <p class="card-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel

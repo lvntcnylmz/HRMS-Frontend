@@ -41,4 +41,12 @@ export class CityListComponent implements OnInit {
       return 'list-group-item list-group-item-action lislist-group-item-dark';
     }
   }
+
+  getAllCityClass() {
+    if (!this.currentCity) {
+      return 'list-group-item list-group-item-action list-group-item-active list-group-item-dark';
+    } else {
+      return 'list-group-item list-group-item-action lislist-group-item-dark';
+    }
+  }
 }

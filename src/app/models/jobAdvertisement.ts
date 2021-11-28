@@ -7,4 +7,5 @@ export interface JobAdvertisement {
   jobTitle: string;
   jobStatus: boolean;
   numberOfOpenPositions: number;
+  cityName: string;
 }
