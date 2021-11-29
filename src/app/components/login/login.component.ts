@@ -5,7 +5,6 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -15,10 +14,7 @@ import { UserService } from 'src/app/services/user.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private userService: UserService
-  ) {}
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.createLoginForm();
@@ -32,15 +28,13 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
-      // let userModel = Object.assign({}, this.loginForm.value);
-      // this.userService.add(userModel).subscribe((response) => {
-      //   console.log(response);
-      //   console.log('Success');
-      // });
-      // } else {
-      //   console.log('Error');
-    }
+    // if (this.loginForm.valid) {
+    //   let jobSeekerModel = Object.assign({}, this.loginForm.value);
+    //   this.registerService
+    //     .userRegister(jobSeekerModel)
+    //     .subscribe((response) => {
+    //       console.log(response);
+    //     });
+    // }
   }
 }
