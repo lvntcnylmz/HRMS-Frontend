@@ -16,6 +16,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  isLogin: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -38,14 +39,19 @@ export class LoginComponent implements OnInit {
   login() {
     if (this.loginForm.valid) {
       let userLoginModel = Object.assign({}, this.loginForm.value);
-      this.loginService.login(userLoginModel).subscribe((response) => {
-        if (response.success == true) {
+      this.loginService.login(userLoginModel).subscribe(
+        (response) => {
+          console.log(response);
           this.router.navigateByUrl('');
           this.toastrService.success(response.message);
-        } else {
-          this.toastrService.error(response.message);
+          this.isLogin = true;
+        },
+        (errorResponse) => {
+          console.log(errorResponse);
+          this.toastrService.error(errorResponse.error.message);
+          this.isLogin = false;
         }
-      });
+      );
     }
   }
 }

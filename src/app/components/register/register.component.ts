@@ -41,10 +41,9 @@ export class RegisterComponent implements OnInit {
           console.log(response);
         },
         (errorResponse) => {
-          this.error = true;
-          console.dir(errorResponse.error.data);
+          console.dir(errorResponse);
           this.toastrService.error(
-            errorResponse.error.data.nationalId,
+            errorResponse.error.message,
             'User could not register.'
           );
         }
