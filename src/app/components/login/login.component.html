@@ -1,4 +1,4 @@
-<section class="vh-100" style="background-color: #eee">
+<section class="position-absolute top-50 start-50 translate-middle w-100">
   <div class="container h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-lg-12 col-xl-11">
@@ -10,7 +10,12 @@
                   Sign in to JobFinder
                 </p>
 
-                <form [formGroup]="loginForm" class="mx-1 mx-md-4">
+                <form
+                  [formGroup]="loginForm"
+                  (ngSubmit)="login()"
+                  #localForm="ngForm"
+                  class="mx-1 mx-md-4"
+                >
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
@@ -18,11 +23,26 @@
                         <input
                           type="email"
                           class="form-control rounded-4"
-                          id="floatingInput"
-                          placeholder="name@example.com"
+                          placeholder=""
                           formControlName="email"
+                          [class.is-invalid]="
+                            localForm.submitted &&
+                            loginForm.get('email')?.invalid
+                          "
                         />
                         <label for="floatingInput">Email address</label>
+                        <div
+                          *ngIf="loginForm.controls['email'].errors?.required"
+                          class="invalid-feedback"
+                        >
+                          Email is required
+                        </div>
+                        <div
+                          *ngIf="loginForm.controls['email'].errors?.email"
+                          class="invalid-feedback"
+                        >
+                          Invalid email
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -34,11 +54,30 @@
                         <input
                           type="password"
                           class="form-control rounded-4"
-                          id="floatingInput"
-                          placeholder="name@example.com"
+                          placeholder=""
                           formControlName="password"
+                          [class.is-invalid]="
+                            localForm.submitted &&
+                            loginForm.get('password')?.invalid
+                          "
                         />
                         <label for="floatingInput">Password</label>
+                        <div
+                          *ngIf="
+                            loginForm.controls['password'].errors?.required
+                          "
+                          class="invalid-feedback"
+                        >
+                          Password is required
+                        </div>
+                        <div
+                          *ngIf="
+                            loginForm.controls['password'].errors?.minlength
+                          "
+                          class="invalid-feedback"
+                        >
+                          Password must be minimum 6 characters
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -82,7 +121,7 @@
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                     <button
-                      type="button"
+                      type="submit"
                       class="btn btn-primary btn-lg"
                       (click)="login()"
                     >

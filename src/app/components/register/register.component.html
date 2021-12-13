@@ -1,4 +1,4 @@
-<section class="vh-100" style="background-color: #eee">
+<section class="vh-100">
   <div class="container h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-lg-12 col-xl-11">
@@ -10,7 +10,12 @@
                   Sign up
                 </p>
 
-                <form [formGroup]="registerForm" class="mx-1 mx-md-4">
+                <form
+                  [formGroup]="registerForm"
+                  (ngSubmit)="register()"
+                  #localForm="ngForm"
+                  class="mx-1 mx-md-4"
+                >
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
@@ -18,11 +23,22 @@
                         <input
                           type="text"
                           class="form-control rounded-4"
-                          id="firstName"
                           formControlName="firstName"
                           placeholder="First Name"
+                          [class.is-invalid]="
+                            localForm.submitted &&
+                            registerForm.get('firstName')?.invalid
+                          "
                         />
                         <label for="floatingInput">First Name</label>
+                        <div
+                          *ngIf="
+                            registerForm.controls['firstName'].errors?.required
+                          "
+                          class="invalid-feedback"
+                        >
+                          First Name is required
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -34,11 +50,22 @@
                         <input
                           type="text"
                           class="form-control rounded-4"
-                          id="lastName"
                           formControlName="lastName"
                           placeholder="Last Name"
+                          [class.is-invalid]="
+                            localForm.submitted &&
+                            registerForm.get('lastName')?.invalid
+                          "
                         />
                         <label for="floatingInput">Last Name</label>
+                        <div
+                          *ngIf="
+                            registerForm.controls['lastName'].errors?.required
+                          "
+                          class="invalid-feedback"
+                        >
+                          Last Name is required
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -50,13 +77,29 @@
                         <input
                           type="email"
                           class="form-control rounded-4"
-                          id="email"
                           formControlName="email"
                           placeholder="Email"
+                          [class.is-invalid]="
+                            localForm.submitted &&
+                            registerForm.get('email')?.invalid
+                          "
                         />
                         <label for="floatingInput">Email address</label>
+                        <div
+                          *ngIf="
+                            registerForm.controls['email'].errors?.required
+                          "
+                          class="invalid-feedback"
+                        >
+                          Email is required
+                        </div>
+                        <div
+                          *ngIf="registerForm.controls['email'].errors?.email"
+                          class="invalid-feedback"
+                        >
+                          Invalid email
+                        </div>
                       </div>
-                      <label class="text-red" *ngIf="error">Field Error</label>
                     </div>
                   </div>
 
@@ -67,11 +110,30 @@
                         <input
                           type="password"
                           class="form-control rounded-4"
-                          id="password"
                           formControlName="password"
                           placeholder="Password"
+                          [class.is-invalid]="
+                            localForm.submitted &&
+                            registerForm.get('password')?.invalid
+                          "
                         />
                         <label for="floatingInput">Password</label>
+                        <div
+                          *ngIf="
+                            registerForm.controls['password'].errors?.required
+                          "
+                          class="invalid-feedback"
+                        >
+                          Password is required
+                        </div>
+                        <div
+                          *ngIf="
+                            registerForm.controls['password'].errors?.minlength
+                          "
+                          class="invalid-feedback"
+                        >
+                          Password must be minimum 6 characters
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -83,14 +145,34 @@
                         <input
                           type="text"
                           class="form-control rounded-4"
-                          id="nationalId"
+                          name="nationalId"
                           formControlName="nationalId"
                           placeholder="National Id"
+                          [class.is-invalid]="
+                            localForm.submitted &&
+                            registerForm.get('nationalId')?.invalid
+                          "
                         />
                         <label for="floatingInput">National Id</label>
-                        <!-- <label *ngIf="registerForm.errors?.['required']"
-                          >National ID is required</label
-                        > -->
+                        <div
+                          *ngIf="
+                            registerForm.controls['nationalId'].errors?.required
+                          "
+                          class="invalid-feedback"
+                        >
+                          National-ID is required
+                        </div>
+                        <div
+                          *ngIf="
+                            registerForm.controls['nationalId'].errors
+                              ?.minlength ||
+                            registerForm.controls['nationalId'].errors
+                              ?.maxlength
+                          "
+                          class="invalid-feedback"
+                        >
+                          National-ID must be 11 characters
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -102,11 +184,34 @@
                         <input
                           type="text"
                           class="form-control rounded-4"
-                          id="birthDate"
-                          formControlName="dateOfBirth"
+                          formControlName="yearOfBirth"
                           placeholder="Year of Birth"
+                          [class.is-invalid]="
+                            localForm.submitted &&
+                            registerForm.get('yearOfBirth')?.invalid
+                          "
                         />
                         <label for="floatingInput">Year of Birth</label>
+                        <div
+                          *ngIf="
+                            registerForm.controls['yearOfBirth'].errors
+                              ?.required
+                          "
+                          class="invalid-feedback"
+                        >
+                          Year of Birth is required
+                        </div>
+                        <div
+                          *ngIf="
+                            registerForm.controls['yearOfBirth'].errors
+                              ?.minlength ||
+                            registerForm.controls['yearOfBirth'].errors
+                              ?.maxlength
+                          "
+                          class="invalid-feedback"
+                        >
+                          Year of Birth must be 4 characters
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -120,7 +225,6 @@
                           class="form-check-input"
                           type="radio"
                           name="userType"
-                          id="userType"
                         />
                         <label class="form-check-label" for="userType">
                           Employer
@@ -131,7 +235,6 @@
                           class="form-check-input"
                           type="radio"
                           name="userType"
-                          id="userType"
                           checked
                         />
                         <label class="form-check-label" for="userType">
@@ -156,7 +259,7 @@
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                     <button
-                      type="button"
+                      type="submit"
                       class="btn btn-primary btn-lg"
                       (click)="register()"
                     >

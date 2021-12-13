@@ -23,14 +23,31 @@ export class RegisterComponent implements OnInit {
   }
 
   createRegisterForm() {
-    this.registerForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required],
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      nationalId: ['', Validators.required],
-      dateOfBirth: ['', Validators.required],
-    });
+    this.registerForm = this.formBuilder.group(
+      {
+        email: this.formBuilder.control('', [
+          Validators.required,
+          Validators.email,
+        ]),
+        password: this.formBuilder.control('', [
+          Validators.required,
+          Validators.minLength(6),
+        ]),
+        firstName: this.formBuilder.control('', Validators.required),
+        lastName: this.formBuilder.control('', Validators.required),
+        nationalId: this.formBuilder.control('', [
+          Validators.required,
+          Validators.minLength(11),
+          Validators.maxLength(11),
+        ]),
+        yearOfBirth: this.formBuilder.control('', [
+          Validators.required,
+          Validators.minLength(4),
+          Validators.maxLength(4),
+        ]),
+      },
+      { updateOn: 'submit' }
+    );
   }
 
   register() {
@@ -39,9 +56,11 @@ export class RegisterComponent implements OnInit {
       this.registerService.userRegister(jobSeekerModel).subscribe(
         (response) => {
           console.log(response);
+          this.error = false;
         },
         (errorResponse) => {
           console.dir(errorResponse);
+          this.error = true;
           this.toastrService.error(
             errorResponse.error.message,
             'User could not register.'
