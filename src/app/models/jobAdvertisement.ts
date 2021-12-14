@@ -6,6 +6,10 @@ export interface JobAdvertisement {
   companyName: string;
   jobTitle: string;
   jobStatus: boolean;
-  numberOfOpenPositions: number;
+  numberOfOpenPosition: number;
   cityName: string;
+  applicationDeadline: Date;
+  description: string;
+  minSalary: number;
+  maxSalary: number;
 }
