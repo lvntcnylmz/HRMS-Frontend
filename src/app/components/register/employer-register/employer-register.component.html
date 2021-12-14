@@ -1,0 +1,163 @@
+<form
+  [formGroup]="employerRegisterForm"
+  (ngSubmit)="register()"
+  #localForm="ngForm"
+  class="shadow p-3 mb-5 bg-body rounded border border-1 border-top-0"
+>
+  <div class="d-flex flex-row align-items-center mb-4">
+    <div class="form-outline flex-fill mb-0">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control rounded-4"
+          formControlName="companyName"
+          placeholder="First Name"
+          [class.is-invalid]="
+            localForm.submitted &&
+            employerRegisterForm.get('companyName')?.invalid
+          "
+        />
+        <label for="floatingInput">Company Name</label>
+        <div
+          *ngIf="employerRegisterForm.controls['companyName'].errors?.required"
+          class="invalid-feedback"
+        >
+          Company Name is required
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex flex-row align-items-center mb-4">
+    <div class="form-outline flex-fill mb-0">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control rounded-4"
+          formControlName="website"
+          placeholder="Last Name"
+          [class.is-invalid]="
+            localForm.submitted && employerRegisterForm.get('website')?.invalid
+          "
+        />
+        <label for="floatingInput">Website</label>
+        <div
+          *ngIf="employerRegisterForm.controls['website'].errors?.required"
+          class="invalid-feedback"
+        >
+          Website is required
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex flex-row align-items-center mb-4">
+    <div class="form-outline flex-fill mb-0">
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          class="form-control rounded-4"
+          formControlName="email"
+          placeholder="Email"
+          [class.is-invalid]="
+            localForm.submitted && employerRegisterForm.get('email')?.invalid
+          "
+        />
+        <label for="floatingInput">Email address</label>
+        <div
+          *ngIf="employerRegisterForm.controls['email'].errors?.required"
+          class="invalid-feedback"
+        >
+          Email is required
+        </div>
+        <div
+          *ngIf="employerRegisterForm.controls['email'].errors?.email"
+          class="invalid-feedback"
+        >
+          Invalid email
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex flex-row align-items-center mb-4">
+    <div class="form-outline flex-fill mb-0">
+      <div class="form-floating mb-3">
+        <input
+          type="password"
+          class="form-control rounded-4"
+          formControlName="password"
+          placeholder="Password"
+          [class.is-invalid]="
+            localForm.submitted && employerRegisterForm.get('password')?.invalid
+          "
+        />
+        <label for="floatingInput">Password</label>
+        <div
+          *ngIf="employerRegisterForm.controls['password'].errors?.required"
+          class="invalid-feedback"
+        >
+          Password is required
+        </div>
+        <div
+          *ngIf="employerRegisterForm.controls['password'].errors?.minlength"
+          class="invalid-feedback"
+        >
+          Password must be minimum 6 characters
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex flex-row align-items-center mb-4">
+    <div class="form-outline flex-fill mb-0">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control rounded-4"
+          name="phoneNumber"
+          formControlName="phoneNumber"
+          placeholder="National Id"
+          [class.is-invalid]="
+            localForm.submitted &&
+            employerRegisterForm.get('phoneNumber')?.invalid
+          "
+        />
+        <label for="floatingInput">Phone Number</label>
+        <div
+          *ngIf="employerRegisterForm.controls['phoneNumber'].errors?.required"
+          class="invalid-feedback"
+        >
+          Phone Number is required
+        </div>
+        <div
+          *ngIf="
+            employerRegisterForm.controls['phoneNumber'].errors?.minlength ||
+            employerRegisterForm.controls['phoneNumber'].errors?.maxlength
+          "
+          class="invalid-feedback"
+        >
+          Phone Number must be 12 characters
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-check d-flex justify-content-center mb-5">
+    <input
+      class="form-check-input me-2"
+      type="checkbox"
+      value=""
+      id="form2Example3c"
+    />
+    <label class="form-check-label" for="form2Example3">
+      I agree all statements in
+      <a href="#!">Terms of service</a>
+    </label>
+  </div>
+
+  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+    <button type="submit" class="btn btn-primary btn-lg" (click)="register()">
+      Register
+    </button>
+  </div>
+</form>

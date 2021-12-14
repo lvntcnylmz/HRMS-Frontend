@@ -6,267 +6,62 @@
           <div class="card-body p-md-5">
             <div class="row justify-content-center">
               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                  Sign up
-                </p>
-
-                <form
-                  [formGroup]="registerForm"
-                  (ngSubmit)="register()"
-                  #localForm="ngForm"
-                  class="mx-1 mx-md-4"
+                <div
+                  class="
+                    nav nav-tabs
+                    justify-content-center
+                    shadow
+                    bg-body
+                    rounded
+                    border border-1 border-top-0
+                  "
+                  id="nav-tab"
+                  role="tablist"
                 >
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                      <div class="form-floating mb-3">
-                        <input
-                          type="text"
-                          class="form-control rounded-4"
-                          formControlName="firstName"
-                          placeholder="First Name"
-                          [class.is-invalid]="
-                            localForm.submitted &&
-                            registerForm.get('firstName')?.invalid
-                          "
-                        />
-                        <label for="floatingInput">First Name</label>
-                        <div
-                          *ngIf="
-                            registerForm.controls['firstName'].errors?.required
-                          "
-                          class="invalid-feedback"
-                        >
-                          First Name is required
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <button
+                    class="nav-link active w-50"
+                    id="nav-home-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#nav-home"
+                    type="button"
+                    role="tab"
+                    aria-controls="nav-home"
+                    aria-selected="true"
+                  >
+                    Job Seeker
+                  </button>
+                  <button
+                    class="nav-link w-50"
+                    id="nav-profile-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#nav-profile"
+                    type="button"
+                    role="tab"
+                    aria-controls="nav-profile"
+                    aria-selected="false"
+                  >
+                    Employer
+                  </button>
+                </div>
 
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                      <div class="form-floating mb-3">
-                        <input
-                          type="text"
-                          class="form-control rounded-4"
-                          formControlName="lastName"
-                          placeholder="Last Name"
-                          [class.is-invalid]="
-                            localForm.submitted &&
-                            registerForm.get('lastName')?.invalid
-                          "
-                        />
-                        <label for="floatingInput">Last Name</label>
-                        <div
-                          *ngIf="
-                            registerForm.controls['lastName'].errors?.required
-                          "
-                          class="invalid-feedback"
-                        >
-                          Last Name is required
-                        </div>
-                      </div>
-                    </div>
+                <div class="tab-content" id="nav-tabContent">
+                  <div
+                    class="tab-pane fade show active"
+                    id="nav-home"
+                    role="tabpanel"
+                    aria-labelledby="nav-home-tab"
+                  >
+                    <app-job-seeker-register></app-job-seeker-register>
                   </div>
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                      <div class="form-floating mb-3">
-                        <input
-                          type="email"
-                          class="form-control rounded-4"
-                          formControlName="email"
-                          placeholder="Email"
-                          [class.is-invalid]="
-                            localForm.submitted &&
-                            registerForm.get('email')?.invalid
-                          "
-                        />
-                        <label for="floatingInput">Email address</label>
-                        <div
-                          *ngIf="
-                            registerForm.controls['email'].errors?.required
-                          "
-                          class="invalid-feedback"
-                        >
-                          Email is required
-                        </div>
-                        <div
-                          *ngIf="registerForm.controls['email'].errors?.email"
-                          class="invalid-feedback"
-                        >
-                          Invalid email
-                        </div>
-                      </div>
-                    </div>
+                  <div
+                    class="tab-pane fade"
+                    id="nav-profile"
+                    role="tabpanel"
+                    aria-labelledby="nav-profile-tab"
+                  >
+                    <app-employer-register></app-employer-register>
                   </div>
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                      <div class="form-floating mb-3">
-                        <input
-                          type="password"
-                          class="form-control rounded-4"
-                          formControlName="password"
-                          placeholder="Password"
-                          [class.is-invalid]="
-                            localForm.submitted &&
-                            registerForm.get('password')?.invalid
-                          "
-                        />
-                        <label for="floatingInput">Password</label>
-                        <div
-                          *ngIf="
-                            registerForm.controls['password'].errors?.required
-                          "
-                          class="invalid-feedback"
-                        >
-                          Password is required
-                        </div>
-                        <div
-                          *ngIf="
-                            registerForm.controls['password'].errors?.minlength
-                          "
-                          class="invalid-feedback"
-                        >
-                          Password must be minimum 6 characters
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                      <div class="form-floating mb-3">
-                        <input
-                          type="text"
-                          class="form-control rounded-4"
-                          name="nationalId"
-                          formControlName="nationalId"
-                          placeholder="National Id"
-                          [class.is-invalid]="
-                            localForm.submitted &&
-                            registerForm.get('nationalId')?.invalid
-                          "
-                        />
-                        <label for="floatingInput">National Id</label>
-                        <div
-                          *ngIf="
-                            registerForm.controls['nationalId'].errors?.required
-                          "
-                          class="invalid-feedback"
-                        >
-                          National-ID is required
-                        </div>
-                        <div
-                          *ngIf="
-                            registerForm.controls['nationalId'].errors
-                              ?.minlength ||
-                            registerForm.controls['nationalId'].errors
-                              ?.maxlength
-                          "
-                          class="invalid-feedback"
-                        >
-                          National-ID must be 11 characters
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                      <div class="form-floating mb-3">
-                        <input
-                          type="text"
-                          class="form-control rounded-4"
-                          formControlName="yearOfBirth"
-                          placeholder="Year of Birth"
-                          [class.is-invalid]="
-                            localForm.submitted &&
-                            registerForm.get('yearOfBirth')?.invalid
-                          "
-                        />
-                        <label for="floatingInput">Year of Birth</label>
-                        <div
-                          *ngIf="
-                            registerForm.controls['yearOfBirth'].errors
-                              ?.required
-                          "
-                          class="invalid-feedback"
-                        >
-                          Year of Birth is required
-                        </div>
-                        <div
-                          *ngIf="
-                            registerForm.controls['yearOfBirth'].errors
-                              ?.minlength ||
-                            registerForm.controls['yearOfBirth'].errors
-                              ?.maxlength
-                          "
-                          class="invalid-feedback"
-                        >
-                          Year of Birth must be 4 characters
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                      <h6>How will you use our products?</h6>
-                      <div class="form-check">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="userType"
-                        />
-                        <label class="form-check-label" for="userType">
-                          Employer
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="userType"
-                          checked
-                        />
-                        <label class="form-check-label" for="userType">
-                          Job seeker
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="form-check d-flex justify-content-center mb-5">
-                    <input
-                      class="form-check-input me-2"
-                      type="checkbox"
-                      value=""
-                      id="form2Example3c"
-                    />
-                    <label class="form-check-label" for="form2Example3">
-                      I agree all statements in
-                      <a href="#!">Terms of service</a>
-                    </label>
-                  </div>
-
-                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button
-                      type="submit"
-                      class="btn btn-primary btn-lg"
-                      (click)="register()"
-                    >
-                      Register
-                    </button>
-                  </div>
-                </form>
+                </div>
               </div>
               <div
                 class="
@@ -276,11 +71,20 @@
                   order-1 order-lg-2
                 "
               >
-                <img
-                  src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-registration/draw1.png"
-                  class="img-fluid"
-                  alt="Sample image"
-                />
+                <div class="d-flex flex-column bd-highlight mb-2">
+                  <div class="p-2 bd-highlight">
+                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+                      Welcome to JobFinder
+                    </p>
+                  </div>
+                  <div class="p-2 bd-highlight">
+                    <img
+                      src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-registration/draw1.png"
+                      class="img-fluid"
+                      alt="Sample image"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
