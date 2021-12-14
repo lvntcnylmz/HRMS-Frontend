@@ -22,6 +22,8 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ToastrModule } from 'ngx-toastr';
+import { JobSeekerRegisterComponent } from './components/register/job-seeker-register/job-seeker-register.component';
+import { EmployerRegisterComponent } from './components/register/employer-register/employer-register.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { ToastrModule } from 'ngx-toastr';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
+    JobSeekerRegisterComponent,
+    EmployerRegisterComponent,
   ],
   imports: [
     BrowserModule,
