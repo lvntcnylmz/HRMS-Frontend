@@ -4,5 +4,6 @@ export interface JobSeeker extends User {
   firstName: string;
   lastName: string;
   nationalId: string;
-  dateOfBirth: string;
+  dateOfBirth: number;
+  email: string;
 }
