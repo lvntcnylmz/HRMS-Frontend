@@ -18,7 +18,7 @@ export class CityService {
   }
 
   getCityById(cityId: number): Observable<ListResponseModel<City>> {
-    let newPath = this.apiURL + 'jobPositions/getCityById?id=' + cityId;
+    let newPath = this.apiURL + 'cities/getCityById?id=' + cityId;
     return this.httpClient.get<ListResponseModel<City>>(newPath);
   }
 }

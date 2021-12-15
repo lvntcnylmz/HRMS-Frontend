@@ -1,3 +1,4 @@
+import { Employer } from './../models/employer';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -12,10 +13,17 @@ export class RegisterService {
 
   constructor(private httpClient: HttpClient) {}
 
-  userRegister(jobSeeker: JobSeeker): Observable<ResponseModel> {
+  jobSeekerRegister(jobSeeker: JobSeeker): Observable<ResponseModel> {
     return this.httpClient.post<ResponseModel>(
       this.apiURL + 'jobSeekers/add',
       jobSeeker
+    );
+  }
+
+  employerRegister(employer: Employer): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(
+      this.apiURL + 'employers/add',
+      employer
     );
   }
 }
