@@ -1,3 +1,5 @@
+import { JobSeekerComponent } from './components/job-seeker/job-seeker.component';
+import { TermsComponent } from './components/terms/terms.component';
 import { JobAdvertisementDetailComponent } from './components/job-advertisement-detail/job-advertisement-detail.component';
 import { HomeComponent } from './components/home/home.component';
 import { EmployerComponent } from './components/employer/employer.component';
@@ -15,9 +17,11 @@ const routes: Routes = [
   { path: 'jobs/:id/detail', component: JobAdvertisementDetailComponent },
   { path: 'cities/:id', component: JobAdvertisementComponent },
   { path: 'companies', component: EmployerComponent },
+  { path: 'candidates', component: JobSeekerComponent },
   { path: 'about', component: AboutUsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'termsofservice', component: TermsComponent },
 ];
 
 @NgModule({

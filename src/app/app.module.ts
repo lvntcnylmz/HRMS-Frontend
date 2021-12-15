@@ -24,6 +24,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { ToastrModule } from 'ngx-toastr';
 import { JobSeekerRegisterComponent } from './components/register/job-seeker-register/job-seeker-register.component';
 import { EmployerRegisterComponent } from './components/register/employer-register/employer-register.component';
+import { TermsComponent } from './components/terms/terms.component';
+import { JobSeekerComponent } from './components/job-seeker/job-seeker.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { EmployerRegisterComponent } from './components/register/employer-regist
     RegisterComponent,
     JobSeekerRegisterComponent,
     EmployerRegisterComponent,
+    TermsComponent,
+    JobSeekerComponent,
   ],
   imports: [
     BrowserModule,
