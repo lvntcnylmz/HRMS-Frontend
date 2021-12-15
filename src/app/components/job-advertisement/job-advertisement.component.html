@@ -19,13 +19,29 @@
           <h6 class="card-subtitle text-muted">
             City : {{ jobAdvertisement.cityName }}
           </h6>
-          <p class="card-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel
-            ex.
-          </p>
+          <h6 class="card-subtitle mt-2 mb-2">
+            Open Positions :
+            {{ jobAdvertisement.numberOfOpenPosition }}
+          </h6>
+          <h6 class="card-subtitle mt-2 mb-2">
+            Deadline :
+            {{ jobAdvertisement.applicationDeadline | date: "dd/MM/yyyy" }}
+          </h6>
+          <h6 class="card-subtitle mt-2 mb-2 text-muted">
+            Min Salary : {{ jobAdvertisement.minSalary | currency: "EUR" }}
+          </h6>
+          <h6 class="card-subtitle mt-2 mb-2 text-muted">
+            Max Salary : {{ jobAdvertisement.maxSalary | currency: "EUR" }}
+          </h6>
           <div class="row">
             <div class="col-auto">
-              <button type="button" class="btn btn-primary">Details</button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                routerLink="jobs/jobId/detail"
+              >
+                Details
+              </button>
             </div>
             <div class="col-auto">
               <button type="button" class="btn btn-success">Apply</button>

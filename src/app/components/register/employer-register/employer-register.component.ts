@@ -40,6 +40,10 @@ export class EmployerRegisterComponent implements OnInit {
           Validators.minLength(13),
           Validators.maxLength(13),
         ]),
+        termsOfService: this.formBuilder.control(
+          false,
+          Validators.requiredTrue
+        ),
       },
       { updateOn: 'submit' }
     );

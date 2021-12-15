@@ -19,11 +19,25 @@ export class CityListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe((params) => {
+      if (params['id']) {
+        this.getCityById(params['id']);
+      } else {
+        this.getCities();
+      }
+    });
     this.getCities();
   }
 
   getCities() {
     this.cityService.getCities().subscribe((response) => {
+      this.cities = response.data;
+      this.dataLoaded = true;
+    });
+  }
+
+  getCityById(cityId: number) {
+    this.cityService.getCityById(cityId).subscribe((response) => {
       this.cities = response.data;
       this.dataLoaded = true;
     });

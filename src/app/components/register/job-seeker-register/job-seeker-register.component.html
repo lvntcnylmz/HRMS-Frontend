@@ -181,13 +181,27 @@
     <input
       class="form-check-input me-2"
       type="checkbox"
-      value=""
-      id="form2Example3c"
+      formControlName="termsOfService"
+      [class.is-invalid]="
+        localForm.submitted &&
+        jobSeekerRegisterForm.get('termsOfService')?.invalid
+      "
     />
-    <label class="form-check-label" for="form2Example3">
+    <label
+      class="form-check-label"
+      for="form2Example3"
+      *ngIf="
+        jobSeekerRegisterForm.controls['termsOfService'].errors?.required;
+        else elseBlock
+      "
+    >
       I agree all statements in
-      <a href="#!">Terms of service</a>
+      <a routerLink="/termsofservice">Terms of service</a>
     </label>
+    <ng-template #elseBlock class="text-danger"
+      >I agree all statements in
+      <a routerLink="/termsofservice">Terms of service</a></ng-template
+    >
   </div>
 
   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">

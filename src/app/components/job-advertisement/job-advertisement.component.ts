@@ -15,7 +15,7 @@ export class JobAdvertisementComponent implements OnInit {
   filterText = '';
 
   constructor(
-    private JobAdvertisementService: JobAdvertisementService,
+    private jobAdvertisementService: JobAdvertisementService,
     private activatedRoute: ActivatedRoute,
     private jobPositionService: JobPositionService
   ) {}
@@ -32,20 +32,20 @@ export class JobAdvertisementComponent implements OnInit {
   }
 
   getJobAdvertisements() {
-    this.JobAdvertisementService.getJobAdvertisements().subscribe(
-      (response) => {
+    this.jobAdvertisementService
+      .getJobAdvertisements()
+      .subscribe((response) => {
         this.jobAdvertisements = response.data;
         this.dataLoaded = true;
-      }
-    );
+      });
   }
 
   getJobAdvertisementByJobId(jobId: number) {
-    this.JobAdvertisementService.getJObAdvertisementByJobPositionId(
-      jobId
-    ).subscribe((response) => {
-      this.jobAdvertisements = response.data;
-      this.dataLoaded = true;
-    });
+    this.jobAdvertisementService
+      .getJObAdvertisementByJobPositionId(jobId)
+      .subscribe((response) => {
+        this.jobAdvertisements = response.data;
+        this.dataLoaded = true;
+      });
   }
 }

@@ -32,7 +32,7 @@
     <div class="form-outline flex-fill mb-0">
       <div class="form-floating mb-3">
         <input
-          type="text"
+          type="url"
           class="form-control rounded-4"
           formControlName="website"
           placeholder="Last Name"
@@ -113,7 +113,8 @@
     <div class="form-outline flex-fill mb-0">
       <div class="form-floating mb-3">
         <input
-          type="text"
+          type="tel"
+          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
           class="form-control rounded-4"
           name="phoneNumber"
           formControlName="phoneNumber"
@@ -146,13 +147,27 @@
     <input
       class="form-check-input me-2"
       type="checkbox"
-      value=""
-      id="form2Example3c"
+      formControlName="termsOfService"
+      [class.is-invalid]="
+        localForm.submitted &&
+        employerRegisterForm.get('termsOfService')?.invalid
+      "
     />
-    <label class="form-check-label" for="form2Example3">
+    <label
+      class="form-check-label"
+      for="form2Example3"
+      *ngIf="
+        employerRegisterForm.controls['termsOfService'].errors?.required;
+        else elseBlock
+      "
+    >
       I agree all statements in
-      <a href="#!">Terms of service</a>
+      <a routerLink="/termsofservice">Terms of service</a>
     </label>
+    <ng-template #elseBlock class="text-danger"
+      >I agree all statements in
+      <a routerLink="/termsofservice">Terms of service</a></ng-template
+    >
   </div>
 
   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">

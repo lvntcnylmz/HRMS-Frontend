@@ -44,6 +44,10 @@ export class JobSeekerRegisterComponent implements OnInit {
           Validators.minLength(4),
           Validators.maxLength(4),
         ]),
+        termsOfService: this.formBuilder.control(
+          false,
+          Validators.requiredTrue
+        ),
       },
       { updateOn: 'submit' }
     );
