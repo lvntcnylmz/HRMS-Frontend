@@ -2,7 +2,7 @@
   [formGroup]="employerRegisterForm"
   (ngSubmit)="register()"
   #localForm="ngForm"
-  class="shadow p-3 mb-5 bg-body rounded border border-1 border-top-0"
+  class="shadow p-3 bg-body rounded border border-1 border-top-0"
 >
   <div class="d-flex flex-row align-items-center mb-4">
     <div class="form-outline flex-fill mb-0">
@@ -32,7 +32,7 @@
     <div class="form-outline flex-fill mb-0">
       <div class="form-floating mb-3">
         <input
-          type="url"
+          type="text"
           class="form-control rounded-4"
           formControlName="website"
           placeholder="Last Name"
@@ -114,7 +114,6 @@
       <div class="form-floating mb-3">
         <input
           type="tel"
-          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
           class="form-control rounded-4"
           name="phoneNumber"
           formControlName="phoneNumber"
