@@ -58,7 +58,13 @@ export class JobSeekerRegisterComponent implements OnInit {
       let jobSeekerModel = Object.assign({}, this.jobSeekerRegisterForm.value);
       this.registerService.jobSeekerRegister(jobSeekerModel).subscribe(
         (response) => {
-          console.log(response);
+          if (response.success) {
+            console.log(response);
+            this.toastrService.success(response.message);
+          } else {
+            console.log(response);
+            this.toastrService.error(response.message);
+          }
         },
         (errorResponse) => {
           console.dir(errorResponse);
