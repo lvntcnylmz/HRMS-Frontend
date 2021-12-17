@@ -1,8 +1,8 @@
-<div class="row row-cols-auto">
+<div class="row">
   <div
     *ngFor="let employer of employers"
-    class="col card rounded-6 shadow mt-4 me-auto"
-    style="width: 18rem"
+    class="col-3 card rounded-6 shadow mt-5 mx-auto"
+    style="width: 18em"
   >
     <div class="card-body">
       <h3 class="card-title">
@@ -19,8 +19,12 @@
         {{ employer.phoneNumber }}
       </li>
       <li class="list-group-item">
-        <i class="bi bi-envelope-fill me-1"></i>
-        {{ employer.webSite }}
+        <i class="bi bi-envelope-fill me-2"></i>
+        <a
+          class="text-decoration-none text-dark"
+          href="https://{{ employer.webSite }}"
+          >{{ employer.webSite }}</a
+        >
       </li>
     </ul>
     <div class="card-body">
