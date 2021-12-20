@@ -40,6 +40,10 @@ export class LoginComponent implements OnInit {
           Validators.required,
           Validators.minLength(6),
         ]),
+        termsOfService: this.formBuilder.control(
+          false,
+          Validators.requiredTrue
+        ),
       },
       { updateOn: 'submit' }
     );

@@ -1,0 +1,89 @@
+<div
+  class="container border position-absolute top-50 start-50 translate-middle"
+  style="border-radius: 25px"
+>
+  <div class="row row-cols-2">
+    <div class="col">
+      <div class="col">
+        <div class="container p-5">
+          <img
+            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.warner.edu%2Fwp-content%2Fuploads%2F2020%2F05%2FMicrosoft-Logo-2012.jpg&f=1&nofb=1"
+            class="img-fluid"
+          />
+        </div>
+      </div>
+      <div class="col">
+        <div class="container p-5">
+          <h1 class="display-4">Who are we?</h1>
+          <p class="lead text-muted">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+            accumsan odio erat, id egestas nisl blandit sit amet. Vivamus eu
+            ipsum sed dui elementum sollicitudin. Vivamus mattis dolor eu velit
+            semper, non ornare ante maximus. Etiam interdum ultricies arcu at
+            pharetra. Proin fermentum, dolor id tempor ultrices, quam metus
+            consequat nibh, nec cursus justo nisl et tellus. Aliquam non augue
+            enim. Donec quam odio, interdum nec ipsum a, interdum fermentum
+            massa. Curabitur vitae ipsum nibh. Vivamus et porttitor dolor.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="col m-auto">
+        <div class="container p-5">
+          <div class="card shadow p-3 bg-body rounded border border-1">
+            <div class="row g-0">
+              <div class="col">
+                <div class="card-body">
+                  <h3 class="card-title">Company Infos</h3>
+                  <hr />
+                  <h4 class="card-text">
+                    <b>Headquarters :</b> Redmond, Washington
+                  </h4>
+                  <h4 class="card-text">
+                    <b>Revenue : </b>more than $10B (USD)
+                  </h4>
+                  <h4 class="card-text"><b>Employees : </b>10,000+</h4>
+                  <h4 class="card-text">
+                    <b>Industry : </b>Information Technology
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col m-auto">
+        <div class="container p-5">
+          <div class="card shadow p-3 bg-body rounded border border-1">
+            <div class="row g-0">
+              <div class="col">
+                <div class="card-body">
+                  <h3 class="card-title">Contact</h3>
+                  <hr />
+                  <h4 class="card-text text-muted">
+                    <i class="bi bi-windows me-2"></i>
+                    <a
+                      class="text-decoration-none text-dark"
+                      href="https://{{ employer.webSite }}"
+                      >{{ employer.webSite }}</a
+                    >
+                  </h4>
+                  <h4 class="card-text text-muted">
+                    <i class="bi bi-envelope-fill me-2"></i>
+                    {{ employer.email }}
+                  </h4>
+                  <h4 class="card-text text-muted">
+                    <i class="bi bi-telephone-forward-fill"></i>
+                    {{ employer.phoneNumber }}
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

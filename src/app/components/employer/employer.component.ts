@@ -1,5 +1,6 @@
+import { EmployerDetailComponent } from './../employer-detail/employer-detail.component';
 import { Employer } from './../../models/employer';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { EmployerService } from 'src/app/services/employer.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -10,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EmployerComponent implements OnInit {
   employers: Employer[] = [];
+  employer: Employer;
   dataLoaded = false;
   currentEmployer: Employer;
 
@@ -19,12 +21,24 @@ export class EmployerComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe((params) => {
+      if (params['id']) {
+        this.getEmployerById(params['id']);
+      }
+    });
     this.getEmployers();
   }
 
   getEmployers() {
     this.employerService.getEmployers().subscribe((response) => {
       this.employers = response.data;
+      this.dataLoaded = true;
+    });
+  }
+
+  getEmployerById(id: number) {
+    this.employerService.getEmployerById(id).subscribe((reponse) => {
+      this.employer = reponse.data;
       this.dataLoaded = true;
     });
   }
