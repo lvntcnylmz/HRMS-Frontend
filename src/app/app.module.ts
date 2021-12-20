@@ -26,6 +26,7 @@ import { JobSeekerRegisterComponent } from './components/register/job-seeker-reg
 import { EmployerRegisterComponent } from './components/register/employer-register/employer-register.component';
 import { TermsComponent } from './components/terms/terms.component';
 import { JobSeekerComponent } from './components/job-seeker/job-seeker.component';
+import { EmployerDetailComponent } from './components/employer-detail/employer-detail.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { JobSeekerComponent } from './components/job-seeker/job-seeker.component
     EmployerRegisterComponent,
     TermsComponent,
     JobSeekerComponent,
+    EmployerDetailComponent,
   ],
   imports: [
     BrowserModule,
