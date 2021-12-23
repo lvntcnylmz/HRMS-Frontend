@@ -80,7 +80,7 @@
                   <h2 class="fs-5 fw-bold m-4 text-center">
                     Or use a third-party
                   </h2>
-                  <div class="d-grid gap-3 mx-3">
+                  <div class="d-grid gap-3 mx-3 mb-5">
                     <button
                       id="twitter-button"
                       class="w-100 btn btn-outline-dark rounded-4"
@@ -107,42 +107,31 @@
                     </button>
                   </div>
 
-                  <div class="form-check d-flex justify-content-center m-5">
-                    <input
-                      class="form-check-input me-2"
-                      type="checkbox"
-                      formControlName="termsOfService"
-                      [class.is-invalid]="
-                        localForm.submitted &&
-                        loginForm.get('termsOfService')?.invalid
-                      "
-                    />
-                    <label
-                      class="form-check-label"
-                      for="form2Example3"
-                      *ngIf="
-                        loginForm.controls['termsOfService'].errors?.required;
-                        else elseBlock
-                      "
-                    >
-                      I agree all statements in
-                      <a routerLink="/termsofservice">Terms of service</a>
-                    </label>
-                    <ng-template #elseBlock class="text-danger"
-                      >I agree all statements in
-                      <a routerLink="/termsofservice"
-                        >Terms of service</a
-                      ></ng-template
-                    >
-                  </div>
-
-                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                  <div
+                    class="
+                      btn-group
+                      d-flex
+                      justify-content-center
+                      mx-4
+                      mb-3 mb-lg-4
+                    "
+                    role="group"
+                    aria-label="Basic example"
+                  >
                     <button
                       type="submit"
-                      class="btn btn-primary btn-lg"
+                      class="btn btn-primary mx-1 rounded-4"
                       (click)="login()"
                     >
                       Login
+                    </button>
+
+                    <button
+                      type="button"
+                      class="btn btn-primary mx-1 rounded-4"
+                      routerLink="/register"
+                    >
+                      Register
                     </button>
                   </div>
                 </form>
