@@ -66,10 +66,10 @@ export class JobSeekerRegisterComponent implements OnInit {
             this.toastrService.error(response.message);
           }
         },
-        (errorResponse) => {
-          console.dir(errorResponse);
+        (responseError) => {
+          console.dir(responseError);
           this.toastrService.error(
-            errorResponse.error.message,
+            responseError.error.message,
             'User could not register.'
           );
         }

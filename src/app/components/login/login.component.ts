@@ -1,3 +1,4 @@
+import { TokenModel } from './../../models/tokenModel';
 import { ToastrService } from 'ngx-toastr';
 import { LoginService } from './../../services/login.service';
 import { Component, OnInit } from '@angular/core';
@@ -16,7 +17,6 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  isLogin: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -40,10 +40,6 @@ export class LoginComponent implements OnInit {
           Validators.required,
           Validators.minLength(6),
         ]),
-        termsOfService: this.formBuilder.control(
-          false,
-          Validators.requiredTrue
-        ),
       },
       { updateOn: 'submit' }
     );
@@ -52,17 +48,17 @@ export class LoginComponent implements OnInit {
   login() {
     if (this.loginForm.valid) {
       let userLoginModel = Object.assign({}, this.loginForm.value);
+
       this.loginService.login(userLoginModel).subscribe(
         (response) => {
           console.log(response);
           this.router.navigateByUrl('');
           this.toastrService.success(response.message);
-          this.isLogin = true;
+          localStorage.setItem('token', response.data);
         },
-        (errorResponse) => {
-          console.log(errorResponse);
-          this.toastrService.error(errorResponse.error.message);
-          this.isLogin = false;
+        (responseError) => {
+          console.log(responseError);
+          this.toastrService.error(responseError.error.message);
         }
       );
     }

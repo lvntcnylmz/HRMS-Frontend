@@ -1,8 +1,8 @@
-import { Observable } from 'rxjs';
+import { TokenModel } from './../models/tokenModel';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { User } from '../models/user';
-import { ResponseModel } from '../models/responseModel';
+import { SingleResponseModel } from '../models/singleResponseModel';
+import { LoginModel } from '../models/loginModel';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +12,18 @@ export class LoginService {
 
   constructor(private httpClient: HttpClient) {}
 
-  login(userLoginModel: User): Observable<ResponseModel> {
-    return this.httpClient.post<ResponseModel>(this.apiUrl, userLoginModel);
+  login(userLoginModel: LoginModel) {
+    return this.httpClient.post<SingleResponseModel<any>>(
+      this.apiUrl,
+      userLoginModel
+    );
+  }
+
+  isAuthenticated() {
+    if (localStorage.getItem('token')) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
