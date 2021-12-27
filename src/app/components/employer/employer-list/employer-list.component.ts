@@ -37,7 +37,7 @@ export class EmployerListComponent implements OnInit {
     if (currentEmployer == this.currentEmployer) {
       return 'list-group-item list-group-item-action list-group-item-active list-group-item-dark';
     } else {
-      return 'list-group-item list-group-item-action lislist-group-item-dark';
+      return 'list-group-item list-group-item-action list-group-item-dark';
     }
   }
 }
