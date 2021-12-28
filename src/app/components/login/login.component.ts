@@ -53,12 +53,16 @@ export class LoginComponent implements OnInit {
         (response) => {
           console.log(response);
           this.router.navigateByUrl('');
-          this.toastrService.success(response.message);
+          this.toastrService.success(response.message, '', {
+            progressBar: true,
+          });
           localStorage.setItem('token', response.data);
         },
         (responseError) => {
           console.log(responseError);
-          this.toastrService.error(responseError.error.message);
+          this.toastrService.error(responseError.error.message, '', {
+            progressBar: true,
+          });
         }
       );
     }

@@ -48,16 +48,51 @@
           >
         </li>
       </ul>
-      <form class="d-flex">
+      <form class="d-flex" *ngIf="!isAuthenticated()">
         <button
           type="button"
           class="btn btn-primary me-md-2"
           routerLink="login"
         >
+          <i class="bi bi-box-arrow-in-right me-1"></i>
           Login
         </button>
         <button type="button" class="btn btn-primary" routerLink="register">
+          <i class="bi bi-person-plus-fill me-1"></i>
           Register
+        </button>
+      </form>
+
+      <form class="d-flex" *ngIf="isAuthenticated()">
+        <div class="dropdown me-2">
+          <button
+            class="btn btn-primary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton2"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Profile
+          </button>
+          <ul
+            class="dropdown-menu dropdown-menu-dark"
+            aria-labelledby="dropdownMenuButton2"
+          >
+            <li><a class="dropdown-item" href="#">Account</a></li>
+            <li><a class="dropdown-item" href="#">Messages</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Separated link</a></li>
+          </ul>
+        </div>
+        <button
+          type="button"
+          class="btn btn-primary me-md-2"
+          routerLink=""
+          (click)="logout()"
+        >
+          <i class="bi bi-box-arrow-left me-1"></i>
+          Logout
         </button>
       </form>
     </div>
