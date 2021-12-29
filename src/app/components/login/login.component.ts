@@ -1,13 +1,7 @@
-import { TokenModel } from './../../models/tokenModel';
 import { ToastrService } from 'ngx-toastr';
 import { LoginService } from './../../services/login.service';
 import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,6 +11,9 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  token: string;
+  decodedToken: any;
+  userId: string;
 
   constructor(
     private formBuilder: FormBuilder,

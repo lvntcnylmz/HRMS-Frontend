@@ -1,5 +1,4 @@
 import { ActivatedRoute } from '@angular/router';
-import { EmployerComponent } from './../employer/employer.component';
 import { Employer } from './../../models/employer';
 import { Component, OnInit } from '@angular/core';
 import { EmployerService } from 'src/app/services/employer.service';
