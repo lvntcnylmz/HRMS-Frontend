@@ -1,4 +1,3 @@
-import { TokenModel } from './../models/tokenModel';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SingleResponseModel } from '../models/singleResponseModel';
