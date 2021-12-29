@@ -29,6 +29,8 @@ import { TermsComponent } from './components/terms/terms.component';
 import { JobSeekerComponent } from './components/job-seeker/job-seeker.component';
 import { EmployerDetailComponent } from './components/employer-detail/employer-detail.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { EmployerProfileComponent } from './components/user-profile/employer-profile/employer-profile.component';
+import { JobSeekerProfileComponent } from './components/user-profile/job-seeker-profile/job-seeker-profile.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,8 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     JobSeekerComponent,
     EmployerDetailComponent,
     UserProfileComponent,
+    EmployerProfileComponent,
+    JobSeekerProfileComponent,
   ],
   imports: [
     BrowserModule,

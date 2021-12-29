@@ -1,3 +1,4 @@
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { EmployerDetailComponent } from './components/employer-detail/employer-detail.component';
 import { JobSeekerComponent } from './components/job-seeker/job-seeker.component';
 import { TermsComponent } from './components/terms/terms.component';
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'termsofservice', component: TermsComponent },
+  { path: 'account', component: UserProfileComponent },
 ];
 
 @NgModule({
