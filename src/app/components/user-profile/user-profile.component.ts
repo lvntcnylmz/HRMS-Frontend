@@ -1,9 +1,6 @@
-import { User } from './../../models/user';
-import { JobSeeker } from './../../models/jobSeeker';
 import { Component, OnInit } from '@angular/core';
 import jwtDecode from 'jwt-decode';
 import { UserService } from 'src/app/services/user.service';
-import { Employer } from 'src/app/models/employer';
 
 @Component({
   selector: 'app-user-profile',

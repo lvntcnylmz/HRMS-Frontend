@@ -1,6 +1,6 @@
 <ng-template [ngIf]="!isJobSeeker()">
-  <app-employer-profile></app-employer-profile>
+  <app-employer-profile [employer]="user"></app-employer-profile>
 </ng-template>
 <ng-template [ngIf]="isJobSeeker()">
-  <app-job-seeker-profile></app-job-seeker-profile>
+  <app-job-seeker-profile [jobSeeker]="user"></app-job-seeker-profile>
 </ng-template>
