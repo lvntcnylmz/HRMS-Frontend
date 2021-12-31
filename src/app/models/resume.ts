@@ -1,12 +1,19 @@
+import { Contact } from './contact';
+import { JobExperience } from './jobExperience';
 import { JobSeeker } from './jobSeeker';
+import { Language } from './language';
+import { Photo } from './photo';
+import { School } from './school';
+import { Skill } from './skill';
+
 export interface Resume {
   id: number;
   coverLetter: string;
   jobSeeker: JobSeeker;
-  // schools:School[];
-  // jobExperience:JobExperience[];
-  // languages:Languages[];
-  // skills:Skills[];
-  // photos:Photos[];
-  // contacts:Contacts[];
+  schools: School[];
+  jobExperience: JobExperience[];
+  languages: Language[];
+  skills: Skill[];
+  photos: Photo[];
+  contacts: Contact[];
 }
