@@ -14,12 +14,12 @@ export class JobSeekerService {
   constructor(private httpClient: HttpClient) {}
 
   getJobSeekers(): Observable<ListResponseModel<JobSeeker>> {
-    let newPath = this.apiURL + 'jobSeekers/getAll';
+    let newPath = this.apiURL + 'jobSeekers/';
     return this.httpClient.get<ListResponseModel<JobSeeker>>(newPath);
   }
 
   getJobSeekerById(id: number): Observable<SingleResponseModel<JobSeeker>> {
-    let newPath = this.apiURL + 'jobSeekers/getById/' + id;
+    let newPath = this.apiURL + 'jobSeekers/' + id;
     return this.httpClient.get<SingleResponseModel<JobSeeker>>(newPath);
   }
 }

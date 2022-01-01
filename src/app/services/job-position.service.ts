@@ -14,12 +14,12 @@ export class JobPositionService {
   constructor(private httpClient: HttpClient) {}
 
   getJobPositions(): Observable<ListResponseModel<JobPosition>> {
-    let newPath = this.apiURL + 'jobPositions/getAll';
+    let newPath = this.apiURL + 'jobPositions/';
     return this.httpClient.get<ListResponseModel<JobPosition>>(newPath);
   }
 
   getJobById(jobId: number): Observable<ListResponseModel<JobPosition>> {
-    let newPath = this.apiURL + 'jobPositions/getById?jobId=' + jobId;
+    let newPath = this.apiURL + 'jobPositions/' + jobId;
     return this.httpClient.get<ListResponseModel<JobPosition>>(newPath);
   }
 }

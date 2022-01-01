@@ -13,12 +13,12 @@ export class CityService {
   constructor(private httpClient: HttpClient) {}
 
   getCities(): Observable<ListResponseModel<City>> {
-    let newPath = this.apiURL + 'cities/getAll';
+    let newPath = this.apiURL + 'cities/';
     return this.httpClient.get<ListResponseModel<City>>(newPath);
   }
 
   getCityById(cityId: number): Observable<ListResponseModel<City>> {
-    let newPath = this.apiURL + 'cities/getCityById?id=' + cityId;
+    let newPath = this.apiURL + 'cities/' + cityId;
     return this.httpClient.get<ListResponseModel<City>>(newPath);
   }
 }
