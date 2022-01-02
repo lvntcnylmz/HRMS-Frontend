@@ -1,4 +1,3 @@
-import { EmployerDetailComponent } from './../employer-detail/employer-detail.component';
 import { Employer } from './../../models/employer';
 import { Component, Input, OnInit } from '@angular/core';
 import { EmployerService } from 'src/app/services/employer.service';

@@ -1,6 +1,4 @@
-import { EmployerResponse } from './../models/employerResponse';
 import { SingleResponseModel } from './../models/singleResponseModel';
-import { ResponseModel } from './../models/responseModel';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -15,15 +13,13 @@ export class EmployerService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getEmployers(): Observable<ListResponseModel<EmployerResponse>> {
+  getEmployers(): Observable<ListResponseModel<Employer>> {
     let newPath = this.apiURL + 'employers/';
-    return this.httpClient.get<ListResponseModel<EmployerResponse>>(newPath);
+    return this.httpClient.get<ListResponseModel<Employer>>(newPath);
   }
 
-  getEmployerById(
-    id: number
-  ): Observable<SingleResponseModel<EmployerResponse>> {
+  getEmployerById(id: number): Observable<SingleResponseModel<Employer>> {
     let newPath = this.apiURL + 'employers/' + id;
-    return this.httpClient.get<SingleResponseModel<EmployerResponse>>(newPath);
+    return this.httpClient.get<SingleResponseModel<Employer>>(newPath);
   }
 }
