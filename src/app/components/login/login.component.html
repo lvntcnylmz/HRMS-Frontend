@@ -25,7 +25,10 @@
                             loginForm.get('email')?.invalid
                           "
                         />
-                        <label for="floatingInput">Email address</label>
+                        <label for="floatingInput"
+                          ><i class="bi bi-envelope-fill me-2"></i>Email
+                          address</label
+                        >
                         <div
                           *ngIf="loginForm.controls['email'].errors?.required"
                           class="invalid-feedback"
@@ -55,7 +58,9 @@
                             loginForm.get('password')?.invalid
                           "
                         />
-                        <label for="floatingInput">Password</label>
+                        <label for="floatingInput"
+                          ><i class="bi bi-lock-fill me-2"></i>Password</label
+                        >
                         <div
                           *ngIf="
                             loginForm.controls['password'].errors?.required
