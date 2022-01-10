@@ -1,41 +1,44 @@
-<div class="row">
-  <div
-    *ngFor="let employer of employers"
-    class="col-3 card rounded-6 shadow mt-5 mx-auto"
-    style="width: 18em"
-  >
-    <div class="card-body">
-      <h3 class="card-title">
-        {{ employer.companyName }}
-      </h3>
-      <p class="card-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et maximus
-        ante. Aenean porttitor sem eget lorem congue consectetur quis a orci.
-      </p>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">
-        <i class="bi bi-telephone-fill me-1"></i>
-        {{ employer.phoneNumber }}
-      </li>
-      <li class="list-group-item">
-        <i class="bi bi-envelope-fill me-2"></i>
-        <a
-          class="text-decoration-none text-dark"
-          href="https://{{ employer.webSite }}"
-          >{{ employer.webSite }}</a
+<div class="container mt-5">
+  <div class="row">
+    <div
+      *ngFor="let employer of employers"
+      class="col-4 card rounded-3 shadow mb-3 mx-3"
+      style="width: 18em"
+    >
+      <div class="card-body">
+        <h3 class="card-title">
+          {{ employer.companyName }}
+        </h3>
+        <p class="card-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et
+          maximus ante. Aenean porttitor sem eget lorem congue consectetur quis
+          a orci.
+        </p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <i class="bi bi-telephone-fill me-1"></i>
+          {{ employer.phoneNumber }}
+        </li>
+        <li class="list-group-item">
+          <i class="bi bi-envelope-fill me-2"></i>
+          <a
+            class="text-decoration-none text-dark"
+            href="https://{{ employer.webSite }}"
+            >{{ employer.webSite }}</a
+          >
+        </li>
+      </ul>
+      <div class="card-body">
+        <button
+          type="button"
+          class="btn btn-primary btn-lg w-100 mx-0"
+          data-bs-dismiss="modal"
+          routerLink="/companies/{{ employer.userId }}"
         >
-      </li>
-    </ul>
-    <div class="card-body">
-      <button
-        type="button"
-        class="btn btn-primary btn-lg w-100 mx-0"
-        data-bs-dismiss="modal"
-        routerLink="/companies/{{ employer.userId }}"
-      >
-        Details
-      </button>
+          Details
+        </button>
+      </div>
     </div>
   </div>
 </div>

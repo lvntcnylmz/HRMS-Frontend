@@ -1,90 +1,76 @@
-<section class="position-absolute top-50 start-50 translate-middle w-100">
-  <div class="container h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-lg-12 col-xl-11">
-        <div class="card text-black" style="border-radius: 25px">
-          <div class="card-body p-md-5">
-            <div class="row justify-content-center">
-              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                <div
-                  class="
-                    nav nav-tabs
-                    justify-content-center
-                    shadow
-                    bg-body
-                    rounded
-                    border border-1 border-top-0
-                  "
-                  id="nav-tab"
-                  role="tablist"
+<div class="container my-5">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-lg-12 col-xl-11">
+      <div class="card text-black" style="border-radius: 25px">
+        <div class="card-body p-md-5">
+          <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+              <div
+                class="nav nav-tabs justify-content-center shadow bg-body rounded border border-1 border-top-0"
+                id="nav-tab"
+                role="tablist"
+              >
+                <button
+                  class="nav-link active w-50"
+                  id="nav-home-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#nav-home"
+                  type="button"
+                  role="tab"
+                  aria-controls="nav-home"
+                  aria-selected="true"
                 >
-                  <button
-                    class="nav-link active w-50"
-                    id="nav-home-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#nav-home"
-                    type="button"
-                    role="tab"
-                    aria-controls="nav-home"
-                    aria-selected="true"
-                  >
-                    Job Seeker
-                  </button>
-                  <button
-                    class="nav-link w-50"
-                    id="nav-profile-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#nav-profile"
-                    type="button"
-                    role="tab"
-                    aria-controls="nav-profile"
-                    aria-selected="false"
-                  >
-                    Employer
-                  </button>
-                </div>
-
-                <div class="tab-content" id="nav-tabContent">
-                  <div
-                    class="tab-pane fade show active"
-                    id="nav-home"
-                    role="tabpanel"
-                    aria-labelledby="nav-home-tab"
-                  >
-                    <app-job-seeker-register></app-job-seeker-register>
-                  </div>
-                  <div
-                    class="tab-pane fade"
-                    id="nav-profile"
-                    role="tabpanel"
-                    aria-labelledby="nav-profile-tab"
-                  >
-                    <app-employer-register></app-employer-register>
-                  </div>
-                </div>
+                  Job Seeker
+                </button>
+                <button
+                  class="nav-link w-50"
+                  id="nav-profile-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#nav-profile"
+                  type="button"
+                  role="tab"
+                  aria-controls="nav-profile"
+                  aria-selected="false"
+                >
+                  Employer
+                </button>
               </div>
 
-              <div
-                class="
-                  col-md-10 col-lg-6 col-xl-7
-                  d-flex
-                  align-items-center
-                  order-1 order-lg-2
-                "
-              >
-                <div class="d-flex flex-column bd-highlight mb-2">
-                  <div class="p-2 bd-highlight">
-                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                      Welcome to JobFinder
-                    </p>
-                  </div>
-                  <div class="p-2 bd-highlight">
-                    <img
-                      src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-registration/draw1.png"
-                      class="img-fluid"
-                      alt="Sample image"
-                    />
-                  </div>
+              <div class="tab-content" id="nav-tabContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="nav-home"
+                  role="tabpanel"
+                  aria-labelledby="nav-home-tab"
+                >
+                  <app-job-seeker-register></app-job-seeker-register>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="nav-profile"
+                  role="tabpanel"
+                  aria-labelledby="nav-profile-tab"
+                >
+                  <app-employer-register></app-employer-register>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2"
+            >
+              <div class="d-flex flex-column bd-highlight mb-2">
+                <div class="p-2 bd-highlight">
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+                    Welcome to JobFinder
+                  </p>
+                </div>
+                <div class="p-2 bd-highlight">
+                  <img
+                    src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-registration/draw1.png"
+                    class="img-fluid"
+                    alt="Sample image"
+                  />
                 </div>
               </div>
             </div>
@@ -93,4 +79,4 @@
       </div>
     </div>
   </div>
-</section>
+</div>

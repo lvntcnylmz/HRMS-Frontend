@@ -1,169 +1,151 @@
-<section class="position-absolute top-50 start-50 translate-middle w-100">
-  <div class="container h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-lg-12 col-xl-11">
-        <div class="card text-black" style="border-radius: 25px">
-          <div class="card-body p-md-5">
-            <div class="row justify-content-center">
-              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                <form
-                  [formGroup]="loginForm"
-                  (ngSubmit)="login()"
-                  #localForm="ngForm"
-                  class="shadow p-3 bg-body rounded border border-1"
-                >
-                  <div class="d-flex flex-row align-items-center m-auto">
-                    <div class="form-outline flex-fill m-3">
-                      <div class="form-floating">
-                        <input
-                          type="email"
-                          class="form-control rounded-4"
-                          placeholder=""
-                          formControlName="email"
-                          [class.is-invalid]="
-                            localForm.submitted &&
-                            loginForm.get('email')?.invalid
-                          "
-                        />
-                        <label for="floatingInput"
-                          ><i class="bi bi-envelope-fill me-2"></i>Email
-                          address</label
-                        >
-                        <div
-                          *ngIf="loginForm.controls['email'].errors?.required"
-                          class="invalid-feedback"
-                        >
-                          Email is required
-                        </div>
-                        <div
-                          *ngIf="loginForm.controls['email'].errors?.email"
-                          class="invalid-feedback"
-                        >
-                          Invalid email
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <div class="form-outline flex-fill">
-                      <div class="form-floating m-3">
-                        <input
-                          type="password"
-                          class="form-control rounded-4"
-                          placeholder=""
-                          formControlName="password"
-                          [class.is-invalid]="
-                            localForm.submitted &&
-                            loginForm.get('password')?.invalid
-                          "
-                        />
-                        <label for="floatingInput"
-                          ><i class="bi bi-lock-fill me-2"></i>Password</label
-                        >
-                        <div
-                          *ngIf="
-                            loginForm.controls['password'].errors?.required
-                          "
-                          class="invalid-feedback"
-                        >
-                          Password is required
-                        </div>
-                        <div
-                          *ngIf="
-                            loginForm.controls['password'].errors?.minlength
-                          "
-                          class="invalid-feedback"
-                        >
-                          Password must be minimum 6 characters
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <hr class="m-3" />
-                  <h2 class="fs-5 fw-bold m-4 text-center">
-                    Or use a third-party
-                  </h2>
-                  <div class="d-grid gap-3 mx-3 mb-5">
-                    <button
-                      id="twitter-button"
-                      class="w-100 btn btn-outline-dark rounded-4"
-                      type="submit"
-                    >
-                      <i class="bi bi-twitter"></i>
-                      Sign up with Twitter
-                    </button>
-                    <button
-                      id="facebook-button"
-                      class="w-100 btn btn-outline-dark rounded-4"
-                      type="submit"
-                    >
-                      <i class="bi bi-facebook"></i>
-                      Sign up with Facebook
-                    </button>
-                    <button
-                      id="github-button"
-                      class="w-100 btn btn-outline-dark rounded-4"
-                      type="submit"
-                    >
-                      <i class="bi bi-github"></i>
-                      Sign up with GitHub
-                    </button>
-                  </div>
-
-                  <div
-                    class="
-                      btn-group
-                      d-flex
-                      justify-content-center
-                      mx-4
-                      mb-3 mb-lg-4
-                    "
-                    role="group"
-                    aria-label="Basic example"
-                  >
-                    <button
-                      type="submit"
-                      class="btn btn-primary mx-1 rounded-4"
-                      (click)="login()"
-                    >
-                      <i class="bi bi-box-arrow-in-right me-1"></i>
-                      Login
-                    </button>
-
-                    <button
-                      type="button"
-                      class="btn btn-primary mx-1 rounded-4"
-                      routerLink="/register"
-                    >
-                      <i class="bi bi-person-plus-fill me-1"></i>
-                      Register
-                    </button>
-                  </div>
-                </form>
-              </div>
-              <div
-                class="
-                  col-md-10 col-lg-6 col-xl-7
-                  d-flex
-                  align-items-center
-                  order-1 order-lg-2
-                "
+<div class="container my-5">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-lg-12 col-xl-11">
+      <div class="card text-black" style="border-radius: 25px">
+        <div class="card-body p-md-5">
+          <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+              <form
+                [formGroup]="loginForm"
+                (ngSubmit)="login()"
+                #localForm="ngForm"
+                class="shadow p-3 bg-body rounded border border-1"
               >
-                <div class="d-flex flex-column bd-highlight mb-2">
-                  <div class="p-2 bd-highlight">
-                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                      Welcome back to JobFinder
-                    </p>
+                <div class="d-flex flex-row align-items-center m-auto">
+                  <div class="form-outline flex-fill m-3">
+                    <div class="form-floating">
+                      <input
+                        type="email"
+                        class="form-control rounded-4"
+                        placeholder=""
+                        formControlName="email"
+                        [class.is-invalid]="
+                          localForm.submitted && loginForm.get('email')?.invalid
+                        "
+                      />
+                      <label for="floatingInput"
+                        ><i class="bi bi-envelope-fill me-2"></i>Email
+                        address</label
+                      >
+                      <div
+                        *ngIf="loginForm.controls['email'].errors?.required"
+                        class="invalid-feedback"
+                      >
+                        Email is required
+                      </div>
+                      <div
+                        *ngIf="loginForm.controls['email'].errors?.email"
+                        class="invalid-feedback"
+                      >
+                        Invalid email
+                      </div>
+                    </div>
                   </div>
-                  <div class="p-2 bd-highlight">
-                    <img
-                      src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-registration/draw1.png"
-                      class="img-fluid"
-                      alt="Sample image"
-                    />
+                </div>
+
+                <div class="d-flex flex-row align-items-center mb-4">
+                  <div class="form-outline flex-fill">
+                    <div class="form-floating m-3">
+                      <input
+                        type="password"
+                        class="form-control rounded-4"
+                        placeholder=""
+                        formControlName="password"
+                        [class.is-invalid]="
+                          localForm.submitted &&
+                          loginForm.get('password')?.invalid
+                        "
+                      />
+                      <label for="floatingInput"
+                        ><i class="bi bi-lock-fill me-2"></i>Password</label
+                      >
+                      <div
+                        *ngIf="loginForm.controls['password'].errors?.required"
+                        class="invalid-feedback"
+                      >
+                        Password is required
+                      </div>
+                      <div
+                        *ngIf="loginForm.controls['password'].errors?.minlength"
+                        class="invalid-feedback"
+                      >
+                        Password must be minimum 6 characters
+                      </div>
+                    </div>
                   </div>
+                </div>
+
+                <hr class="m-3" />
+                <h2 class="fs-5 fw-bold m-4 text-center">
+                  Or use a third-party
+                </h2>
+                <div class="d-grid gap-3 mx-3 mb-5">
+                  <button
+                    id="twitter-button"
+                    class="w-100 btn btn-outline-dark rounded-4"
+                    type="submit"
+                  >
+                    <i class="bi bi-twitter"></i>
+                    Sign up with Twitter
+                  </button>
+                  <button
+                    id="facebook-button"
+                    class="w-100 btn btn-outline-dark rounded-4"
+                    type="submit"
+                  >
+                    <i class="bi bi-facebook"></i>
+                    Sign up with Facebook
+                  </button>
+                  <button
+                    id="github-button"
+                    class="w-100 btn btn-outline-dark rounded-4"
+                    type="submit"
+                  >
+                    <i class="bi bi-github"></i>
+                    Sign up with GitHub
+                  </button>
+                </div>
+
+                <div
+                  class="btn-group d-flex justify-content-center mx-4 mb-3 mb-lg-4"
+                  role="group"
+                  aria-label="Basic example"
+                >
+                  <button
+                    type="submit"
+                    class="btn btn-primary mx-1 rounded-4"
+                    (click)="login()"
+                  >
+                    <i class="bi bi-box-arrow-in-right me-1"></i>
+                    Login
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btn btn-primary mx-1 rounded-4"
+                    routerLink="/register"
+                  >
+                    <i class="bi bi-person-plus-fill me-1"></i>
+                    Register
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div
+              class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2"
+            >
+              <div class="d-flex flex-column bd-highlight mb-2">
+                <div class="p-2 bd-highlight">
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+                    Welcome back to JobFinder
+                  </p>
+                </div>
+                <div class="p-2 bd-highlight">
+                  <img
+                    src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-registration/draw1.png"
+                    class="img-fluid"
+                    alt="Sample image"
+                  />
                 </div>
               </div>
             </div>
@@ -172,4 +154,4 @@
       </div>
     </div>
   </div>
-</section>
+</div>
