@@ -1,6 +1,6 @@
+import { JobSeeker } from 'src/app/models/jobSeeker';
 import { Contact } from './contact';
 import { JobExperience } from './jobExperience';
-import { JobSeeker } from './jobSeeker';
 import { Language } from './language';
 import { Photo } from './photo';
 import { School } from './school';

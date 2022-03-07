@@ -1,6 +1,6 @@
-import { JobSeekerService } from './../../services/job-seeker.service';
-import { JobSeeker } from './../../models/jobSeeker';
 import { Component, OnInit } from '@angular/core';
+import { JobSeeker } from 'src/app/models/jobSeeker';
+import { JobSeekerService } from 'src/app/services/job-seeker.service';
 
 @Component({
   selector: 'app-job-seeker',
