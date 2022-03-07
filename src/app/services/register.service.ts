@@ -2,8 +2,8 @@ import { JobSeeker } from 'src/app/models/jobSeeker';
 import { Employer } from './../models/employer';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
 import { ResponseModel } from '../models/responseModel';
+import { Injectable } from '@angular/core';
 
 
 @Injectable({
