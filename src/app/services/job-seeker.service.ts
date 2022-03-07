@@ -1,9 +1,9 @@
 import { JobSeeker } from 'src/app/models/jobSeeker';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ListResponseModel } from '../models/listResponseModel';
 import { SingleResponseModel } from '../models/singleResponseModel';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
