@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EmployerListComponent } from './employer-list.component';
+import { EmployerComponent } from 'src/app/components/employer/employer.component';
 
 describe('EmployerListComponent', () => {
   let component: EmployerListComponent;
@@ -8,7 +9,7 @@ describe('EmployerListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EmployerListComponent ]
+      declarations: [ EmployerListComponent, EmployerComponent ]
     })
     .compileComponents();
   });

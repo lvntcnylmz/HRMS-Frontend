@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CityListComponent } from './city-list.component';
+import { CityComponent } from 'src/app/components/city/city.component';
 
 describe('CityListComponent', () => {
   let component: CityListComponent;
@@ -8,7 +9,7 @@ describe('CityListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CityListComponent ]
+      declarations: [ CityListComponent, CityComponent ]
     })
     .compileComponents();
   });
