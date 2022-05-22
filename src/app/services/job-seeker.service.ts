@@ -1,4 +1,4 @@
-import { JobSeeker } from '../models/jobSeeker';
+import { JobSeeker } from 'src/app/models/jobSeeker';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ListResponseModel } from '../models/listResponseModel';

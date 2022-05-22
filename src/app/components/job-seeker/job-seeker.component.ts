@@ -1,4 +1,4 @@
-import { JobSeeker } from './../../models/jobSeeker';
+import { JobSeeker } from 'src/app/models/jobSeeker';
 import { Component, OnInit } from '@angular/core';
 import { JobSeekerService } from 'src/app/services/job-seeker.service';
 
