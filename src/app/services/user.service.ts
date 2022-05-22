@@ -1,9 +1,7 @@
 import { SingleResponseModel } from './../models/singleResponseModel';
-import { ResponseModel } from './../models/responseModel';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { User } from '../models/user';
 import { ListResponseModel } from '../models/listResponseModel';
 
 @Injectable({

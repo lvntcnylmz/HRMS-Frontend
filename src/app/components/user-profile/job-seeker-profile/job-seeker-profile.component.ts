@@ -1,5 +1,5 @@
+import { JobSeeker } from './../../../models/jobSeeker';
 import { Component, Input, OnInit } from '@angular/core';
-import { JobSeeker } from 'src/app/models/jobSeeker';
 
 @Component({
   selector: 'app-job-seeker-profile',
